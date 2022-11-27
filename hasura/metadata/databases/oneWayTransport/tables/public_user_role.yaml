@@ -1,0 +1,40 @@
+table:
+  schema: public
+  name: user_role
+is_enum: true
+insert_permissions:
+  - role: administrator
+    permission:
+      check: {}
+      columns:
+        - comment
+        - value
+      backend_only: false
+  - role: anonymous
+    permission:
+      check: {}
+      columns:
+        - value
+        - comment
+      backend_only: false
+select_permissions:
+  - role: administrator
+    permission:
+      columns:
+        - comment
+        - value
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - comment
+        - value
+      filter: {}
+update_permissions:
+  - role: administrator
+    permission:
+      columns:
+        - comment
+        - value
+      filter: {}
+      check: null

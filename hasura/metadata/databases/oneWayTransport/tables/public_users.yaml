@@ -1,0 +1,110 @@
+table:
+  schema: public
+  name: users
+insert_permissions:
+  - role: administrator
+    permission:
+      check: {}
+      columns:
+        - id
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+        - created_at
+        - updated_at
+        - uuid
+      backend_only: false
+  - role: anonymous
+    permission:
+      check: {}
+      columns:
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+      backend_only: false
+  - role: user
+    permission:
+      check: {}
+      columns: []
+      backend_only: false
+select_permissions:
+  - role: administrator
+    permission:
+      columns:
+        - id
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+        - created_at
+        - updated_at
+        - uuid
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - email
+        - first_name
+        - id
+        - last_name
+        - password
+        - role
+        - slug
+      filter: {}
+  - role: user
+    permission:
+      columns:
+        - id
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+        - created_at
+        - updated_at
+        - uuid
+      filter: {}
+update_permissions:
+  - role: administrator
+    permission:
+      columns:
+        - id
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+        - created_at
+        - updated_at
+        - uuid
+      filter: {}
+      check: null
+  - role: user
+    permission:
+      columns:
+        - id
+        - email
+        - first_name
+        - last_name
+        - password
+        - role
+        - slug
+        - created_at
+        - updated_at
+        - uuid
+      filter: {}
+      check: null
+delete_permissions:
+  - role: administrator
+    permission:
+      filter: {}

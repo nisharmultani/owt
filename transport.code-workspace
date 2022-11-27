@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "transport",
+			"path": "."
+		},
+		{
+			"name": "hasura",
+			"path": "../../transport/hasura"
+		}
+	],
+	"settings": {}
+}
